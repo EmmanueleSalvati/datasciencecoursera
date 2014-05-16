@@ -14,3 +14,4 @@ datasets/
 
 # Mac
 .DS_Store
+.Rproj.user
