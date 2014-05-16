@@ -7,6 +7,7 @@
 
 # R data files from past sessions
 .Rdata
+*.Rproj
 
 # Course material
 Lectures_Course2/
