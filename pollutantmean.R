@@ -28,7 +28,8 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
         # 3. Get the mean in a column
         get_mean <- function(dataframe, pollutant) {
                 pollutant_column <- dataframe[, pollutant]
-                mean(pollutant_column, na.rm = TRUE)
+                full_mean <- mean(pollutant_column, na.rm = TRUE)
+                round(full_mean[1], 3)
         }
         
         # 4. Now use the functions
