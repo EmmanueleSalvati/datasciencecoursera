@@ -22,15 +22,16 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
         }
         
         df <- get_data_frames(directory)
-        get_mean(df, pollutant, id)
-        # print(nrow(df))
-        # print(names(df))
-        # print(pollutant)
-        # print(class(df$ID))
-        condition <- df$ID == 2 | df$ID == 1
+        # get_mean(df, pollutant, id)
+
+        v_ID <- df[, "ID"]
+        print(class(v_ID))
+        sel_ID <- v_ID[v_ID == id]
+        print(length(id))
+        print(v_ID)
         # print(class(condition))
         # nrow(df[condition, c(pollutant, "ID")])
-        print(id)
-        my_cond <- c(df$ID[df$ID == id])
-        nrow(df[my_cond, pollutant])
+        # print(id)
+        # my_cond <- c(df$ID[df$ID == id])
+        # nrow(df[my_cond, pollutant])
 }
