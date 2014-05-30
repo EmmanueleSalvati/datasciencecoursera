@@ -12,6 +12,10 @@
 # Course material
 Lectures_Course2/
 datasets/
+*.csv
+*/*.csv
+*.pdf
+*/*.pdf
 
 # Mac
 .DS_Store
