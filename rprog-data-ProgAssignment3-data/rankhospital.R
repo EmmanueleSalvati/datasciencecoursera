@@ -20,23 +20,24 @@ rankhospital <- function(state, outcome, num="best") {
         stop("invalid outcome")
     }
 
-    ## Slice dataframe by state and outcome
+    ## Helper function: slice dataframe by state and outcome
     get_by_state <- function(dataframe, state, outcome) {
-        df <- subset(dataframe, State==state, select=c("State", outcome))
+        df <- subset(dataframe, State==state & !is.na(dataframe[[outcome]]), 
+                     select=c("Hospital.Name", "State", outcome))
     }
     
-        
-    state_df <- get_by_state(df, state, outcome)
-
+    
     ## Return hospital name in that state with the given rank
     ## 30-day death rate
     
-    
-    
-    ## Now rank the column outcome
-    rank_vector <- rank(state_df[, outcome], na.last=NA)
-
-    #     print(state_df[, outcome])
-    print("And the rank is")
-    print(rank_vector)
+    state_df <- get_by_state(df, state, outcome)
+    # Now rank the column outcome
+    state_df <- state_df[order(state_df[outcome], state_df["Hospital.Name"]), ]
+    if (num=="best") {
+        num <- c(1)
+    }
+    if (num=="worst") {
+        num <- c(nrow(state_df))
+    }
+    state_df[num, "Hospital.Name"]
 }
