@@ -1,14 +1,11 @@
 # History files
 .Rhistory
 .Rapp.history
-
 # Example code in package build process
 *-Ex.R
-
 # R data files from past sessions
 .Rdata
 *.Rproj
-
 # Course material
 Lectures_Course2/
 datasets/
@@ -16,7 +13,7 @@ datasets/
 */*.csv
 *.pdf
 */*.pdf
-
 # Mac
 .DS_Store
 .Rproj.user
+.httr-oauth
