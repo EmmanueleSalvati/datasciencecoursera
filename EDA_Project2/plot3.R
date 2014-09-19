@@ -6,8 +6,8 @@ library(data.table)
 DT <- data.table(NEI)
 rm(NEI)
 
-DT[, sum(Emissions), by = list(type, year)][type == "POINT"]
-sum_df3 <- DT[, sum(Emissions), by = list(type, year)]
+sum_df3 <- DT[, sum(Emissions),
+              by = list(type, year, fips == "24510")][fips==TRUE]
 
 library(ggplot2)
 qplot(year, log(V1), data = sum_df3, col = type, geom = c("point", "smooth"),
