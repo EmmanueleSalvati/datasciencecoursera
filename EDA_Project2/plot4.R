@@ -1,0 +1,11 @@
+if (!exists("NEI")) {
+        NEI <- readRDS("summarySCC_PM25.rds")
+}
+
+if (!exists("SCC")) {
+        SCC <- readRDS("Source_Classification_Code.rds")
+}
+
+library(data.table)
+NEI_DT <- data.table(NEI)
+
