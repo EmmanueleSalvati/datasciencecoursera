@@ -13,6 +13,8 @@ datasets/
 */*.csv
 *.pdf
 */*.pdf
+*.rds
+*/*.rds
 # Mac
 .DS_Store
 .Rproj.user
